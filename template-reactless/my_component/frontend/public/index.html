@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="bootstrap.min.css" />
   </head>
   <body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(tokenResponse) {
+        const el = document.getElementById("txtToken");
+        el.value = tokenResponse.credential;
+        el.dispatchEvent(new Event('change'));
+      }
+    </script>
+    <div id="g_id_onload"
+      data-client_id="723971696417-0lj9rss70s8brkbsjrlfd2tmqniicdm4.apps.googleusercontent.com"
+      data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
   </body>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </html>
